@@ -1,0 +1,207 @@
+nome,calorias,proteínas,carboidratos,gorduras
+Arroz integral cozido,124,2.6,25.8,1
+Arroz integral cru,360,7.3,77.5,1.9
+Arroz tipo cozido,128,2.5,28.1,0.2
+Arroz tipo cru,358,7.2,78.8,0.3
+Aveia flocos crua,394,13.9,66.6,8.5
+Biscoito doce recheado com chocolate,472,6.4,70.5,19.6
+Biscoito doce recheado com morango,471,5.7,71,19.6
+Biscoito doce wafer recheado de chocolate,502,5.6,67.5,24.7
+Biscoito doce wafer recheado de morango,513,4.5,67.4,26.4
+Biscoito salgado cream cracker,432,10.1,68.7,14.4
+Cereais milho flocos,363,6.9,80.4,1.2
+Cereais mingau milho infantil,394,6.4,87.3,1.1
+Cereal matinal milho,365,7.2,83.8,1
+Farinha de trigo,360,9.8,75.1,1.4
+Farinha láctea de cereais,415,11.9,77.8,5.8
+Lasanha massa fresca cozida,164,5.8,32.5,1.2
+Lasanha massa fresca crua,220,7,45.1,1.3
+Macarrão instantâneo,436,8.8,62.4,17.2
+Pão aveia forma,343,12.4,59.6,5.7
+Pão de soja,309,11.3,56.5,3.6
+Pão glúten forma,253,12,44.1,2.7
+Pão milho forma,292,8.3,56.4,3.1
+Pão trigo forma integral,253,9.4,49.9,3.7
+Pastel de carne frito,388,10.1,43.8,20.1
+Pastel de queijo frito,422,8.7,48.1,22.7
+Pipoca com óleo de soja sem sal,448,9.9,70.3,15.9
+Abóbora cabotian crua,39,1.7,8.4,0.5
+Alface americana crua,9,0.6,1.7,0.1
+Alface crespa crua,11,1.3,1.7,0.2
+Alface lisa crua,14,1.7,2.4,0.1
+Alface roxa crua,13,0.9,2.5,0.2
+Alfavaca crua,29,2.7,5.2,0.5
+Alho cru,113,7,23.9,0.2
+Batata doce cozida,77,0.6,18.4,0.1
+Batata doce crua,118,1.3,28.2,0.1
+Batata frita tipo chips industrializada,543,5.6,51.2,36.6
+Batata inglesa cozida,52,1.2,11.9,0.01
+Feijão broto,87.5,4.2,7.8,0.1
+Berinjela cozida,19,0.7,3.2,0.1
+Beterraba cozida,32,1.3,7.2,0.1
+Brócolis cozido,25,2.1,1.2,0.5
+Cenoura cozida,30,0.8,6.7,0.2
+Cenoura crua,34,1.3,7.7,0.2
+Couve-flor cozida,19,1.2,3.9,0.3
+Espinafre Nova Zelândia refogado,67,2.7,4.2,5.4
+Pão de queijo assado,33.7,5.1,34.2,24.6
+Pepino,96.8,0.9,2.0,0
+Tomate,95.1,1.1,3.1,0.2
+Abacate,96,1.2,6.0,8.4
+Abacaxi,48,0.9,12.3,0.1
+Açaí congelado,58,0.8,6.2,3.9
+Ameixa em calda,183,0.4,46.9,0
+Ameixa,53,0.8,13.9,0
+Ameixa enlatada,177,1.0,47.7,0.3
+Banana da terra,128,1.4,33.7,0.2
+Laranja,51,1.1,12.9,0.2
+Limão,14,0.3,5.2,0.2
+Maçã,262,0.2,16.6,2.0
+Manga,190,0.8,11.6,1.8
+Maracujá,286,2.0,12.3,1.1
+Melancia,136,0.9,8.1,0.1
+Melão,123,0.7,7.5,0.3
+Morango,126,0.9,6.8,1.7
+Pêssego,152,0.8,9.3,1.4
+Azeite de oliva extra virgem,3699,0,0,100.0
+Manteiga com sal,3037,0.4,1.4,82.4
+Manteiga sem sal,3170,0.4,0.1,86.0
+Margarina com óleo hidrogenado com sal,2494,0,1.9,67.4
+Margarina com óleo hidrogenado sem sal,3023,0,0.2,81.7
+Óleo de girassol,3699,0,0,100.0
+Uva,205,0.6,12.7,0.9
+Atum em óleo,64.5,26.2,0,6
+Bacalhau cru,47.9,29,0,1.3
+Bacalhau refogado,65.9,24,3.6,0
+Cação frito,60.6,25,10,3.1
+Cação cozido,75.9,25.6,0.7,0
+Camarão cozido,78.7,19,1,1
+Camarão cru,89.1,10,0.5,0
+Caranguejo cozido,77,18.5,0.4,0
+Corimba cru,75.6,17.4,6,0
+Corvina crua,79.2,18.9,1.6,0
+Dourada fresca,76.2,18.8,5.6,0
+Lambari cru,72.2,15.7,9.4,0
+Manjuba frita,40.7,23.5,22.6,0
+Merluza assada,70.7,26.6,0.9,0
+Merluza crua,82.1,16.6,2,0
+Pescada crua,79.5,16.7,4,0
+Salmão grelhado,60.9,23.9,0,14.0
+Salmão cru,69.0,19.3,0,9.7
+Salmão grelhado sem pele,58.1,26.1,0,14.5
+Sardinha assada,60.1,32.2,0,3.0
+Sardinha em óleo,55.1,15.9,0,24.0
+Sardinha frita,48.5,33.4,0,12.7
+Apresuntado,539,13.5,6.7,6.7
+Caldo de carne,1007,7.8,16.6,16.6
+Caldo de galinha,1052,6.3,20.4,20.4
+Carne bovina acém moído cozido,889,26.7,10.9,10.9
+Carne bovina acém moído cru,571,19.4,5.9,5.9
+Carne bovina acém sem gordura cozido,898,27.3,10.9,10.9
+Carne bovina acém sem gordura cru,603,20.8,6.1,6.1
+Carne bovina almôndega crua,539,15.1,9.4,9.4
+Carne bovina bucho cozido,441,13.3,0.2,0.2
+Carne bovina bucho cru,357,11.7,0,0
+Carne bovina calabresa,576,24.6,9.3,9.3
+Carne bovina charque cozido,1099,36.4,11.9,11.9
+Carne bovina charque cru,754,34.6,5.5,5.5
+Carne bovina contra-filé com gordura cozido,1163,32.4,15.5,15.5
+Carne bovina contra-filé com gordura cru,937,27.6,12.4,12.4
+Carne bovina contra-filé sem gordura cozido,988,35.1,16.2,16.2
+Carne bovina contra-filé sem gordura cru,815,30.7,14.1,14.1
+Carne bovina filé mingnon sem gordura grelhado,220,32.8,0,8.8
+Carne bovina maminha grelhada,153,30.7,0,2.4
+Frango peito sem pele grelhado,159,32,0,2.5
+Frango sem pele cozido,154,31.1,0,2.3
+Ovo de galinha inteiro cru,143,13,1.6,8.9
+Açúcar mascavo,369,0.8,94.5,0.1
+Açúcar refinado,387,0.3,99.5,0
+Porco rabo salgado cru,377,34.5,0,15.6
+Presunto com capa de gordura,128,14.4,1.4,6.8
+Presunto sem capa de gordura,94,14.3,2.1,2.7
+Quibe assado,136,14.6,12.9,2.7
+Quibe cru,109,12.4,10.8,1.7
+Quibe frito,254,14.9,12.3,15.8
+Salame,398,25.8,2.9,30.6
+Toucinho cru,593,11.5,0,60.3
+Toucinho frito,697,27.3,0,64.3
+Bebida láctea pêssego,55,2.1,7.6,1.9
+Creme de leite,221,1.5,4.5,22.5
+Iogurte natural,51,4.1,1.9,3.0
+Iogurte natural desnatado,41,3.8,5.8,0.3
+Iogurte sabor abacaxi,68,2.7,14.1,2.3
+Iogurte sabor morango,70,2.7,9.7,2.3
+Iogurte sabor pêssego,68,2.5,9.4,2.3
+Leite condensado,313,7.7,57.0,6.7
+Leite de cabra,66,3.1,5.2,3.8
+Leite de vaca achocolatado,83,2.1,14.2,2.2
+Leite de vaca desnatado pó,362,34.7,53.0,0.9
+Leite de vaca desnatado UHT,43,3.4,4.8,0.3
+Leite de vaca integral,60,3.2,4.7,3.3
+Leite de vaca integral pó,497,25.4,39.2,26.9
+Leite fermentado,70,1.9,15.7,0.1
+Queijo minas frescal,264,17.4,3.2,20.2
+Queijo minas meia cura,321,21.2,3.6,24.6
+Queijo mozarela,330,22.6,3.0,25.2
+Queijo parmesão,453,35.6,1.7,33.5
+Queijo pasteurizado,303,9.4,5.7,27.4
+Carne, bovina, picanha, com gordura, grelhada,289,26,0,19
+Carne, bovina, picanha, sem gordura, crua,134,21,0,5
+Carne, bovina, picanha, sem gordura, grelhada,238,32,0,11
+Porco, bisteca, grelhada,280,29,0,17
+Porco, costela, assada,402,30,0,30
+Porco, costela, crua,256,18,0,19
+Porco, lombo, assado,210,36,0,6
+Porco, lombo, cru,176,23,0,8
+Porco, orelha, salgada, crua,258,19,0,19
+Porco, pernil, assado,262,32,0,14
+Porco, pernil, cru,186,20,0,11
+Cerveja, pilsen,41,0,5,0
+Refrigerante, tipo água tônica,31,0,8,0
+Refrigerante, tipo cola,34,0,9,0
+Refrigerante, tipo guaraná,39,0,10,0
+Refrigerante, tipo laranja,46,0,12,0
+Refrigerante, tipo limão,40,0,11,0
+Café, pó, torrado,419,15,65,12
+Capuccino, pó,417,11,74,9
+Fermento em pó, químico,90,1,43,0
+Fermento, biológico, levedura, tablete,90,17,8,1
+Gelatina, sabores variados, pó,380,9,89,0
+Sal, dietético,NA,NA,NA,NA
+Sal, grosso,NA,NA,NA,NA
+Shoyu,61,3,12,0
+Tempero a base de sal,21,3,2,0
+Bife à cavalo, com contra filé,291,24,257,21
+Bolinho de arroz,274,8,70,8
+Camarão à baiana,101,8,117,6
+Charuto, de repolho,78,7,21,1
+Cuscuz, de milho, cozido com sal,113,2,25,1
+Cuscuz, paulista,142,3,22,5
+Cuxá, molho,80,6,58,3
+Dobradinha,125,20,144,4
+Estrogonofe de carne,173,15,66,11
+Estrogonofe de frango,157,18,80,8
+Feijão tropeiro mineiro,152,10,68,7
+Feijoada,117,9,22,6
+Frango, com açafrão,113,10,50,6
+Macarrão, molho bolognesa,120,5,7,1
+Maniçoba,134,10,43,9
+Quibebe,86,9,6,3
+Salada, de legumes, com maionese,96,1,7,7
+Salada, de legumes, cozida no vapor,35,2,7,0
+Salpicão, de frango,148,14,53,8
+Amendoim, grão, cru,544,27,20,44
+Amendoim, torrado, salgado,606,23,19,54
+Ervilha, em vagem,88,7,14,0
+Ervilha, enlatada, drenada,74,5,13,0
+Feijão, carioca, cozido,76,5,13,0
+Feijão, carioca, cru,329,20,61,1
+Feijão, fradinho, cozido,78,5,13,1
+Feijão, fradinho, cru,339,20,61,2
+Feijão, jalo, cozido,93,6,16,1
+Feijão, jalo, cru,328,20,61,0
+Feijão, preto, cozido,77,4,14,1
+Feijão, preto, cru,324,21,59,1
+Feijão, rajado, cozido,85,6,15,1
+Grão-de-bico, cru,355,21,58,5
+água,0,0,0,0
