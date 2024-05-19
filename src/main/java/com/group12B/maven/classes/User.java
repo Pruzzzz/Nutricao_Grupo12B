@@ -12,6 +12,7 @@ public class User extends Admin {
     private int carboidratosDiariosIngeridas;
     private int gordurasDiariasIngeridas;
     private ArrayList<SugestaoRefeicao> sugestoes;
+    private ArrayList<Refeicao> registoAlim;
 
     public User(int id, String nome, String senha, int idade, double peso, double altura, String genero) {
         super(id, nome, senha);
@@ -20,6 +21,7 @@ public class User extends Admin {
         this.altura = altura;
         this.genero = genero;
         this.sugestoes = new ArrayList<>();
+        this.registoAlim = new ArrayList<>();
     }
 
     // Getters
@@ -58,6 +60,10 @@ public class User extends Admin {
     public ArrayList<SugestaoRefeicao> getSugestoes() {
         return sugestoes;
     }
+    
+    public ArrayList<Refeicao> getRegisto() {
+    	return registoAlim;
+    }
 
     // Setters
     public void setIdade(int idade) {
@@ -90,5 +96,9 @@ public class User extends Admin {
 
     public void setGordurasDiariasIngeridas(int gordurasDiariasIngeridas) {
         this.gordurasDiariasIngeridas = gordurasDiariasIngeridas;
+    }
+    
+    public void registarRef(Refeicao ref) {
+    	registoAlim.add(ref);
     }
 }

@@ -1,16 +1,19 @@
 package com.group12B.maven.classes;
 
 import java.util.ArrayList;
+import java.time.LocalDate;
 
 public class Refeicao {
     private int refeicaoId;
     private String nome;
     private ArrayList<Alimento> alimentos;
+    private LocalDate data;
 
     public Refeicao(int refeicaoId, String nome) {
         this.refeicaoId = refeicaoId;
         this.nome = nome;
         this.alimentos = new ArrayList<>();
+        data = LocalDate.now();
     }
 
     // Getters
@@ -24,6 +27,10 @@ public class Refeicao {
 
     public ArrayList<Alimento> getAlimentos() {
         return alimentos;
+    }
+    
+    public LocalDate getData() {
+    	return data;
     }
 
     // Setters

@@ -1,16 +1,13 @@
 package com.group12B.maven.classes;
 
 import java.util.ArrayList;
-import java.util.Date;
 
 public class RegistoAlimentar {
     private int idUtilizador;
-    private Date data;
     private ArrayList<Refeicao> refeicoes;
 
-    public RegistoAlimentar(int idUtilizador, Date data) {
+    public RegistoAlimentar(int idUtilizador) {
         this.idUtilizador = idUtilizador;
-        this.data = data;
         this.refeicoes = new ArrayList<>();
     }
 
@@ -19,9 +16,6 @@ public class RegistoAlimentar {
         return idUtilizador;
     }
 
-    public Date getData() {
-        return data;
-    }
 
     public ArrayList<Refeicao> getRefeicoes() {
         return refeicoes;
@@ -32,11 +26,12 @@ public class RegistoAlimentar {
         this.idUtilizador = idUtilizador;
     }
 
-    public void setData(Date data) {
-        this.data = data;
-    }
-
     public void setRefeicoes(ArrayList<Refeicao> refeicoes) {
         this.refeicoes = refeicoes;
+    }
+    
+    public void nvRefeicao(Refeicao refeicao)
+    {
+    	refeicoes.add(refeicao);
     }
 }

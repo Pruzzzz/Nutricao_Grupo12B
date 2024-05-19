@@ -83,12 +83,24 @@ public class Gestor {
         return false;
     }
 
-    public void adicionarRefeicao(Refeicao refeicao) {
-       
+    public void adicionarRefeicao(Refeicao refeicao, int idUser) {
+       for (Admin user:admins)
+       {
+    	   if (user.getId()==idUser)
+    	   {
+    		   ((User) user).registarRef(refeicao);
+    	   }
+       }
     }
 
-    public void consultarRefeicoes() {
-        
+    public void consultarRefeicoes(int idUser) {
+    	for (Admin user:admins)
+        {
+     	   if (user.getId()==idUser)
+     	   {
+     		   ((User) user).getRegisto();
+     	   }
+        }
     }
 
     public void consultarDadosNutricionaisComparadosMeta() {
