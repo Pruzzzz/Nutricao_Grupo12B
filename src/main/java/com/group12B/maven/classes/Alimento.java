@@ -2,12 +2,12 @@ package com.group12B.maven.classes;
 
 public class Alimento {
     private String nome;
-    private int calorias;
-    private int proteinas;
-    private int carboidratos;
-    private int gorduras;
+    private double calorias;
+    private double proteinas;
+    private double carboidratos;
+    private double gorduras;
 
-    public Alimento(String nome, int calorias, int proteinas, int carboidratos, int gorduras) {
+    public Alimento(String nome, double calorias, double proteinas, double carboidratos, double gorduras) {
         this.nome = nome;
         this.calorias = calorias;
         this.proteinas = proteinas;
@@ -20,19 +20,19 @@ public class Alimento {
         return nome;
     }
 
-    public int getCalorias() {
+    public double getCalorias() {
         return calorias;
     }
 
-    public int getProteinas() {
+    public double getProteinas() {
         return proteinas;
     }
 
-    public int getCarboidratos() {
+    public double getCarboidratos() {
         return carboidratos;
     }
 
-    public int getGorduras() {
+    public double getGorduras() {
         return gorduras;
     }
 
