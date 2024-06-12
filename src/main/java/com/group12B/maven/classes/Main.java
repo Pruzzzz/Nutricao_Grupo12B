@@ -19,14 +19,21 @@ public class Main {
                 System.out.println("2. Login Utilizador");
                 System.out.println("3. Login Admin");
                 System.out.println("10. Sair");
-            } else {
-                System.out.println("4. Adicionar Refeição");
-                System.out.println("5. Consultar Refeições");
-                System.out.println("6. Consultar Calorias de Alimento");
-                System.out.println("7. Sugestão de Refeições");
-                System.out.println("8. Logout");
-                System.out.println("9. Calorias Consumidas e Restantes");
+            } else if (!(gestor.getCurrentUser() instanceof User)) {
+                System.out.println("4. Adicionar Alimento");
+                System.out.println("5. Consultar Alimentos");
+                System.out.println("9. Logout");
                 System.out.println("10. Sair");
+
+            } else {
+				System.out.println("4. Adicionar Refeição");
+				System.out.println("5. Consultar Refeições");
+				System.out.println("6. Consultar Calorias de Alimento");
+				System.out.println("7. Sugestão de Refeições");
+				System.out.println("8. Calorias Consumidas e Restantes");
+				System.out.println("9. Logout");
+				System.out.println("10. Sair");
+
             }
             System.out.print("Escolha uma opção: ");
             int opcao = scanner.nextInt();
@@ -47,13 +54,13 @@ public class Main {
                     String senhaReg = scanner.nextLine();
                     System.out.print("Idade: ");
                     int idade = scanner.nextInt();
-                    scanner.nextLine(); // consume the leftover newline
+                    scanner.nextLine(); 
                     System.out.print("Peso: ");
                     double peso = scanner.nextDouble();
-                    scanner.nextLine(); // consume the leftover newline
+                    scanner.nextLine(); 
                     System.out.print("Altura: ");
                     double altura = scanner.nextDouble();
-                    scanner.nextLine(); // consume the leftover newline
+                    scanner.nextLine(); 
                     System.out.print("Gênero: ");
                     String genero = scanner.nextLine();
 
@@ -63,7 +70,7 @@ public class Main {
                 case 2:
                     System.out.print("ID: ");
                     int idUserLogin = scanner.nextInt();
-                    scanner.nextLine(); // consume the leftover newline
+                    scanner.nextLine();
 
                     System.out.print("Senha: ");
                     String senhaUser = scanner.nextLine();
@@ -75,72 +82,95 @@ public class Main {
                     }
                     break;
                 case 3:
-                    System.out.print("ID: ");
-                    int idAdmin = scanner.nextInt();
-                    scanner.nextLine(); // consume the leftover newline
-
                     System.out.print("Senha: ");
                     String senhaAdmin = scanner.nextLine();
 
-                    if (gestor.loginAdmin(idAdmin, senhaAdmin)) {
+                    if (gestor.loginAdmin(1, senhaAdmin)) {
                         System.out.println("Login de admin bem-sucedido.");
                     } else {
                         System.out.println("ID ou senha incorretos.");
                     }
                     break;
                 case 4:
-                    if (gestor.getCurrentUser() == null) {
-                        System.out.println("Por favor, faça login primeiro.");
-                        break;
-                    }
-                    System.out.print("ID da Refeição: ");
-                    int idRef = scanner.nextInt();
-                    scanner.nextLine(); // consume the leftover newline
-
-                    System.out.print("Nome da Refeição: ");
-                    String nomeRef = scanner.nextLine();
-
-                    Refeicao refeicao = new Refeicao(idRef, nomeRef);
-
-                    boolean adicionarAlimentos = true;
-                    while (adicionarAlimentos) {
+                    if (!(gestor.getCurrentUser() instanceof User)) {
                         System.out.print("Nome do Alimento: ");
                         String nomeAlimento = scanner.nextLine();
-                        Alimento alimento = null;
-                        for (Alimento a : gestor.getAlimentos()) {
-                            if (a.getNome().equalsIgnoreCase(nomeAlimento)) {
-                                alimento = a;
-                                break;
-                            }
-                        }
-                        if (alimento != null) {
-                            refeicao.getAlimentos().add(alimento);
-                        } else {
-                            System.out.println("Alimento não encontrado.");
-                        }
-                        System.out.print("Deseja adicionar mais alimentos? (sim/não): ");
-                        String resposta = scanner.nextLine();
-                        adicionarAlimentos = resposta.equalsIgnoreCase("sim");
-                    }
 
-                    gestor.adicionarRefeicao(refeicao, gestor.getCurrentUser().getId());
-                    System.out.println("Refeição adicionada com sucesso.");
+                        System.out.print("Calorias do Alimento: ");
+                        double calorias = scanner.nextDouble();
+                        scanner.nextLine(); 
+
+                        System.out.print("Proteínas do Alimento: ");
+                        double proteinas = scanner.nextDouble();
+                        scanner.nextLine(); 
+
+                        System.out.print("Carboidratos do Alimento: ");
+                        double carboidratos = scanner.nextDouble();
+                        scanner.nextLine(); 
+
+                        System.out.print("Gorduras do Alimento: ");
+                        double gorduras = scanner.nextDouble();
+                        scanner.nextLine(); 
+
+                        gestor.adicionarAlimento(new Alimento(nomeAlimento, calorias, proteinas, carboidratos, gorduras));
+                        System.out.println("Alimento adicionado com sucesso.");
+                    } else if (gestor.getCurrentUser() != null) {
+                        System.out.print("ID da Refeição: ");
+                        int idRef = scanner.nextInt();
+                        scanner.nextLine();
+
+                        System.out.print("Nome da Refeição: ");
+                        String nomeRef = scanner.nextLine();
+
+                        Refeicao refeicao = new Refeicao(idRef, nomeRef);
+
+                        boolean adicionarAlimentos = true;
+                        while (adicionarAlimentos) {
+                            System.out.print("Nome do Alimento: ");
+                            String nomeAlimento = scanner.nextLine();
+                            Alimento alimento = null;
+                            for (Alimento a : gestor.getAlimentos()) {
+                                if (a.getNome().equalsIgnoreCase(nomeAlimento)) {
+                                    alimento = a;
+                                    break;
+                                }
+                            }
+                            if (alimento != null) {
+                                refeicao.getAlimentos().add(alimento);
+                            } else {
+                                System.out.println("Alimento não encontrado.");
+                            }
+                            System.out.print("Deseja adicionar mais alimentos? (sim/não): ");
+                            String resposta = scanner.nextLine();
+                            adicionarAlimentos = resposta.equalsIgnoreCase("sim");
+                        }
+
+                        gestor.adicionarRefeicao(refeicao, gestor.getCurrentUser().getId());
+                        System.out.println("Refeição adicionada com sucesso.");
+                    } else {
+                        System.out.println("Por favor, faça login primeiro.");
+                    }
                     break;
                 case 5:
-                    if (gestor.getCurrentUser() == null) {
+                    if (!(gestor.getCurrentUser() instanceof User)) {
+                        gestor.consultarAlimentos();
+                    } else if (gestor.getCurrentUser() != null) {
+                        gestor.consultarRefeicoes(gestor.getCurrentUser().getId());
+                    } else {
                         System.out.println("Por favor, faça login primeiro.");
-                        break;
                     }
-                    gestor.consultarRefeicoes(gestor.getCurrentUser().getId());
                     break;
                 case 6:
-                    if (gestor.getCurrentUser() == null) {
+                    if (gestor.getCurrentUser() instanceof Admin) {
+                        gestor.logout();
+                        System.out.println("Logout bem-sucedido.");
+                    } else if (gestor.getCurrentUser() != null) {
+                        System.out.print("Nome do Alimento: ");
+                        String nomeAlimento = scanner.next();
+                        gestor.consultarCaloriasAlimento(nomeAlimento);
+                    } else {
                         System.out.println("Por favor, faça login primeiro.");
-                        break;
                     }
-                    System.out.print("Nome do Alimento: ");
-                    String nomeAlimento = scanner.next();
-                    gestor.consultarCaloriasAlimento(nomeAlimento);
                     break;
                 case 7:
                     if (gestor.getCurrentUser() == null) {
@@ -170,10 +200,6 @@ public class Main {
                     }
                     break;
                 case 8:
-                    gestor.logout();
-                    System.out.println("Logout bem-sucedido.");
-                    break;
-                case 9:
                     if (gestor.getCurrentUser() == null) {
                         System.out.println("Por favor, faça login primeiro.");
                         break;
@@ -187,6 +213,14 @@ public class Main {
                         System.out.println("Calorias Restantes: " + caloriasRestantes);
                     } else {
                         System.out.println("Calorias consumidas e restantes só podem ser calculadas para utilizadores.");
+                    }
+                    break;
+                case 9:
+                    if (gestor.getCurrentUser() != null) {
+                        gestor.logout();
+                        System.out.println("Logout bem-sucedido.");
+                    } else {
+                        System.out.println("Opção inválida.");
                     }
                     break;
                 case 10:

@@ -1,9 +1,12 @@
 package com.group12B.maven.classes;
 
 import com.opencsv.CSVReader;
+import com.opencsv.CSVWriter;
 import com.opencsv.exceptions.CsvValidationException;
 
+import java.io.File;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Random;
@@ -38,7 +41,7 @@ public class Gestor {
             String[] line;
             while ((line = reader.readNext()) != null) {
                 if (line[0].equalsIgnoreCase("nome")) {
-                    continue; // Skip header line
+                    continue; 
                 }
                 try {
                     String nome = line[0];
@@ -56,6 +59,8 @@ public class Gestor {
             }
         }
     }
+    
+    
 
     private void loadAdminsFromCSV() throws IOException, CsvValidationException {
         try (CSVReader reader = new CSVReader(new FileReader(filePathLogin))) {
@@ -67,21 +72,77 @@ public class Gestor {
                 int id = Integer.parseInt(line[0]);
                 String nome = line[1];
                 String senha = line[2];
+                int idade = Integer.parseInt(line[3]);
+                double peso = Double.parseDouble(line[4]);
+                double altura = Double.parseDouble(line[5]);
+                String genero = line[6];
 
-                Admin admin = new Admin(id, nome, senha);
+                Admin admin;
+                if (id == 1) {
+                    admin = new Admin(id, nome, senha);
+                } else {
+                    admin = new User(id, nome, senha, idade, peso, altura, genero);
+                }
                 admins.add(admin);
             }
         }
     }
 
-    public void registoUtilizador(int id, String nome, String senha, int idade, double peso, double altura, String genero) {
-        Admin user = new User(id, nome, senha, idade, peso, altura, genero);
+    private void salvarUtilizador(User utilizador) throws IOException, CsvValidationException {
+       
+        int proximoID = 1;
+        boolean arquivoVazio = true; 
+        try (CSVReader reader = new CSVReader(new FileReader(filePathLogin))) {
+        
+            arquivoVazio = reader.readNext() == null;
+    
+            if (!arquivoVazio) {
+                String[] ultimaLinha = null;
+                String[] linha;
+                while ((linha = reader.readNext()) != null) {
+                    ultimaLinha = linha;
+                }
+                if (ultimaLinha != null && ultimaLinha.length > 0) {
+                    proximoID = Integer.parseInt(ultimaLinha[0]) + 1;
+                }
+            }
+        }
+        
+
+        try (CSVWriter writer = new CSVWriter(new FileWriter(filePathLogin, true))) {
+            
+            if (arquivoVazio) {
+                String[] cabecalho = {"id", "nome", "senha", "idade", "peso", "altura", "genero"};
+                writer.writeNext(cabecalho);
+            }
+
+            String[] utilizadorData = {
+                    String.valueOf(proximoID),
+                    utilizador.getNome(),
+                    utilizador.getSenha(),
+                    String.valueOf(utilizador.getIdade()),
+                    String.valueOf(utilizador.getPeso()),
+                    String.valueOf(utilizador.getAltura()),
+                    utilizador.getGenero()
+            };
+            writer.writeNext(utilizadorData, false);
+            writer.flush();
+        }
+    }
+
+
+
+
+
+    public void registoUtilizador(int id, String nome, String senha, int idade, double peso, double altura, String genero) throws IOException, CsvValidationException {
+        User user = new User(id, nome, senha, idade, peso, altura, genero);
         admins.add(user);
+        salvarUtilizador(user);
     }
 
     public boolean loginUtilizador(int id, String senha) {
         for (Admin admin : admins) {
-            if (admin.getId() == id && admin.getSenha().equals(senha)) {
+            if (admin instanceof User && admin.getId() == id && admin.getSenha().equals(senha)) {
                 currentUser = admin;
                 return true;
             }
@@ -91,7 +152,7 @@ public class Gestor {
 
     public boolean loginAdmin(int id, String senha) {
         for (Admin admin : admins) {
-            if (admin.getId() == id && admin.getSenha().equals(senha)) {
+            if (admin instanceof Admin && admin.getId() == id && admin.getSenha().equals(senha)) {
                 currentUser = admin;
                 return true;
             }
@@ -164,7 +225,6 @@ public class Gestor {
         }
     }
 
-
     private User encontrarUtilizador(int userId) {
         for (Admin admin : admins) {
             if (admin instanceof User && admin.getId() == userId) {
@@ -173,10 +233,7 @@ public class Gestor {
         }
         return null;
     }
-    
-    
 
-    
     public Refeicao sugerirRefeicao() {
         if (alimentos.isEmpty()) {
             System.out.println("Não há alimentos disponíveis para sugerir uma refeição.");
@@ -217,5 +274,24 @@ public class Gestor {
         Random random = new Random();
         return alimentos.get(random.nextInt(alimentos.size()));
     }
-}
 
+    public void adicionarAlimento(Alimento alimento) throws IOException {
+        alimentos.add(alimento);
+        try (FileWriter writer = new FileWriter(filePathAlimentos, true)) {
+            writer.append(alimento.getNome()).append(',')
+                  .append(String.valueOf(alimento.getCalorias())).append(',')
+                  .append(String.valueOf(alimento.getProteinas())).append(',')
+                  .append(String.valueOf(alimento.getCarboidratos())).append(',')
+                  .append(String.valueOf(alimento.getGorduras())).append('\n');
+        }
+    }
+
+    public void consultarAlimentos() {
+        System.out.println("Lista de Alimentos:");
+        for (Alimento alimento : alimentos) {
+            System.out.println("Nome: " + alimento.getNome() + ", Calorias: " + alimento.getCalorias() + 
+                               ", Proteínas: " + alimento.getProteinas() + ", Carboidratos: " + alimento.getCarboidratos() + 
+                               ", Gorduras: " + alimento.getGorduras());
+        }
+    }
+}

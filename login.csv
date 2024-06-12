@@ -1,3 +1,3 @@
-id,nome,senha
-1,pedro,teste1
-1,joao,teste2
+id,nome,senha,idade,peso,altura,genero
+1,pedro,admin,0,0,0,masculino
+2,o,o,1,2.0,3.0,masculino
